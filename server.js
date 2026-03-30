@@ -13,7 +13,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: ["https://myrealnotes.netlify.app"], // array format
+    origin: ["https://myrealnotes.netlify.app"],
     methods: ["GET", "POST"],
     credentials: true,
   },
