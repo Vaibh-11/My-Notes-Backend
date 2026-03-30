@@ -12,9 +12,9 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://notes-app-dun-beta.vercel.app",
+    origin: true, 
     credentials: true,
-  }),
+  })
 );
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
