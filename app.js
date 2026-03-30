@@ -1,6 +1,4 @@
 const express = require("express");
-
-const connection = require("./config/databaseConnection.js");
 const userRouter = require("./routes/userRoutes.js");
 const noteRouter = require("./routes/noteRoutes.js");
 const logRouter = require("./routes/logRoute.js");
@@ -9,19 +7,20 @@ const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
+
 app.set("trust proxy", 1);
+
 app.use(
   cors({
-    origin: "https://notes-app-dun-beta.vercel.app",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
+    origin: "https://notes-app-dun-beta.vercel.app", // ✅ no slash
     credentials: true,
   })
 );
-app.options("*", cors());
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+
 app.use("/user", userRouter);
 app.use("/notes", noteRouter);
 app.use("/logs", logRouter);
@@ -30,4 +29,4 @@ app.get("/", (req, res) => {
   res.send("Welcome please login to access the notes");
 });
 
-
+module.exports = app;
