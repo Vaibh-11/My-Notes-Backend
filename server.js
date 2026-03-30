@@ -14,7 +14,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "https://notes-app-dun-beta.vercel.app/", // frontend URL
+    origin: "https://notes-app-dun-beta.vercel.app", 
     credentials: true,
   },
 });
