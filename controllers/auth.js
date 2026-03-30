@@ -61,6 +61,10 @@ module.exports.userLogin = async (req, res) => {
       });
     }
 
+    console.log("DB query start");
+const [rows] = await connection.query(findByEmail, [email]);
+console.log("DB query success");
+
     const findByEmail = "Select * from users where email = ?";
     const [rows] = await connection.query(findByEmail, [email]);
 
