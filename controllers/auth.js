@@ -45,6 +45,7 @@ module.exports.userSignUp = async (req, res) => {
 };
 
 module.exports.userLogin = async (req, res) => {
+  console.log("Login API hit");
   const { email, password } = req.body;
   try {
     if (!email || !password) {
