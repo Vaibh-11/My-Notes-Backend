@@ -14,7 +14,7 @@ const server = http.createServer(app);
 const io = new Server(server, {
   path: "/socket.io",
   cors: {
-    origin: ["https://myrealnotes.netlify.app"],
+    origin: ["https://notes-app-dun-beta.vercel.app"],
     methods: ["GET", "POST"],
     credentials: true,
   },
