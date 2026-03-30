@@ -12,10 +12,13 @@ const app = express();
 app.set("trust proxy", 1);
 app.use(
   cors({
-    origin: "https://notes-app-dun-beta.vercel.app", 
+    origin: "https://notes-app-dun-beta.vercel.app",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
   })
 );
+app.options("*", cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
