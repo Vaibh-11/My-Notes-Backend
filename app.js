@@ -12,7 +12,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: true, 
+    origin: "https://notes-app-dun-beta.vercel.app", 
     credentials: true,
   })
 );
