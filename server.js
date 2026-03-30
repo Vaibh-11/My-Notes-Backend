@@ -20,8 +20,8 @@ const io = new Server(server, {
 
 setupSocket(io, connection);
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT;
 
 server.listen(PORT, () => {
-  console.log(`Web Server running on port ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
