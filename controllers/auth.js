@@ -80,12 +80,13 @@ module.exports.userLogin = async (req, res) => {
       expiresIn: "2h",
     });
 
-    res.cookie("token", token, {
-      httpOnly: true,
-      maxAge: 1000 * 60 * 60 * 2,
-      secure: false,
-      path: "/",
-    });
+   res.cookie("token", token, {
+  httpOnly: true,
+  maxAge: 1000 * 60 * 60 * 2,
+  secure: true,       
+  sameSite: "none",    
+  path: "/",
+});
 
     res.status(200).json({ message: `Welcome${user.name}`, token });
   } catch (err) {
