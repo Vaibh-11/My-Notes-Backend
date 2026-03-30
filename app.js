@@ -30,10 +30,4 @@ app.get("/", (req, res) => {
   res.send("Welcome please login to access the notes");
 });
 
-const PORT = process.env.PORT;
-
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
-
 
