@@ -12,6 +12,7 @@ const setupSocket = require("./socket/socket");
 const server = http.createServer(app);
 
 const io = new Server(server, {
+  path: "/socket.io",
   cors: {
     origin: ["https://myrealnotes.netlify.app"],
     methods: ["GET", "POST"],
